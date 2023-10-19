@@ -1,11 +1,13 @@
 const Pool = require("pg").Pool;
 
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME } = process.env;
+
 const pool = new Pool({
-  user: "admin",
-  password: "njNBoERipZg0FeP4I5NMuysAUiALoOxs",
-  host: "dpg-cknfa6vkc2qc738m40tg-a.frankfurt-postgres.render.com",
-  port: 5432,
-  database: "deals_kulu",
+  user: DB_USER,
+  password: DB_PASSWORD,
+  host: DB_HOST,
+  port: DB_PORT,
+  database: DB_NAME,
   ssl: true,
 });
 

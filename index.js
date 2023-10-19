@@ -3,7 +3,8 @@ const cors = require("cors");
 require("dotenv").config();
 const dealsRouter = require("./routes/routes");
 
-const PORT = 8080;
+const { DB_HOST } = process.env;
+const PORT = 4000;
 
 const app = express();
 
@@ -22,4 +23,4 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message });
 });
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+app.listen(PORT, DB_HOST, () => console.log(`Server started on port ${PORT}`));

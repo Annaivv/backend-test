@@ -4,7 +4,6 @@ class DealsController {
   async getDeals(req, res) {
     try {
       const deals = await db.query("SELECT * FROM deals");
-      console.log(deals.rows);
       res.json(deals.rows);
     } catch (error) {
       console.log(error.message);
